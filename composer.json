@@ -6,13 +6,12 @@
     "license": "MIT",
     "homepage": "http://madkom.pl/",
     "keywords": [
-        "pact",
-        "broker",
-        "consumer",
-        "driven",
-        "contract",
-        "client",
-        "madkom"
+        "madkom",
+        "docker",
+        "registry",
+        "api",
+        "private",
+        "client"
     ],
     "authors": [
         {
