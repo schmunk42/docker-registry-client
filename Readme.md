@@ -1,11 +1,9 @@
-# Pact-Broker-Client
-[![Build Status](https://travis-ci.org/madkom/pact-broker-client.svg?branch=master)](https://travis-ci.org/madkom/pact-broker-client)
-[![Coverage Status](https://coveralls.io/repos/github/madkom/pact-broker-client/badge.svg?branch=master)](https://coveralls.io/github/madkom/pact-broker-client?branch=master)    
+# Docker-Registry-API    
 
-PHP Client for [Pact Broker](https://github.com/bethesque/pact_broker). 
+PHP Client for [Docker Registry](https://docs.docker.com/registry/spec/api/). 
 
 ### Usage
-Check `usage` catalog for usage examples or `test suites`.
+Check `usage` catalog for usage examples.
 
 ### License
 The MIT License (MIT)
