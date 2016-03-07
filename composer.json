@@ -5,14 +5,7 @@
     "prefer-stable": true,
     "license": "MIT",
     "homepage": "http://madkom.pl/",
-    "keywords": [
-        "madkom",
-        "docker",
-        "registry",
-        "api",
-        "private",
-        "client"
-    ],
+    "keywords": ["madkom", "docker", "registry", "api", "private", "client"],
     "authors": [
         {
             "name": "Darek Gafka",
