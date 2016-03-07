@@ -64,7 +64,6 @@ class HttpDockerRegistryClient
         $response = $this->client->sendRequest($authorizationRequest);
 
         if ($response->getStatusCode() !== 200) {
-            dump($authorizationRequest);
             throw new DockerRegistryException("Can't authorize with given credentials: " . $response->getBody()->getContents());
         }
 

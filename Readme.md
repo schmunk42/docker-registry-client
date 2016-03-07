@@ -1,4 +1,6 @@
 # Docker-Registry-API    
+[![Build Status](https://travis-ci.org/madkom/docker-registry-client.svg?branch=master)](https://travis-ci.org/madkom/docker-registry-client)
+
 
 PHP Client for [Docker Registry](https://docs.docker.com/registry/spec/api/). 
 
