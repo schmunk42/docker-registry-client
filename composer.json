@@ -1,6 +1,6 @@
 {
     "name": "madkom/docker-registry-api",
-    "description": "Client for pact broker.",
+    "description": "Client for docker registry.",
     "type": "library",
     "prefer-stable": true,
     "license": "MIT",
