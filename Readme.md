@@ -2,7 +2,9 @@
 [![Build Status](https://travis-ci.org/madkom/docker-registry-client.svg?branch=master)](https://travis-ci.org/madkom/docker-registry-client)
 
 
-PHP Client for [Docker Registry](https://docs.docker.com/registry/spec/api/). 
+PHP Client for [Docker Registry](https://docs.docker.com/registry/spec/api/).
+ 
+For now it only contains possibility to retrieve image tags. Feel free to add more `request types`.
 
 ### Usage
 Check `usage` catalog for usage examples.
