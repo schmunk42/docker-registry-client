@@ -18,6 +18,10 @@ class Authorization implements Request
     /**
      * @var string
      */
+    private $registryService;
+    /**
+     * @var string
+     */
     private $username;
     /**
      * @var string
@@ -32,13 +36,15 @@ class Authorization implements Request
      * Authorization constructor.
      *
      * @param string $registryHost
+     * @param string $registryService
      * @param string $username
      * @param string $password
      * @param string $scope
      */
-    public function __construct($registryHost, $username, $password, $scope)
+    public function __construct($registryHost, $registryService, $username, $password, $scope)
     {
         $this->registryHost = $registryHost;
+        $this->registryService = $registryService;
         $this->username = $username;
         $this->password = $password;
         $this->scope = $scope;
@@ -57,8 +63,7 @@ class Authorization implements Request
      */
     public function uri()
     {
-        $parsedUrl = parse_url($this->registryHost);
-        return '/v2/token?service=' . $parsedUrl['host'] . '&scope=' . $this->scope();
+        return '/v2/token?service=' . $this->registryService . '&scope=' . $this->scope();
     }
 
     /**

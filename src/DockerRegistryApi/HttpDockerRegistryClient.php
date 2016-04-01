@@ -24,6 +24,10 @@ class HttpDockerRegistryClient
     /**
      * @var string
      */
+    private $registryServiceName;
+    /**
+     * @var string
+     */
     private $password;
     /**
      * @var PsrHttpRequestFactory
@@ -33,20 +37,22 @@ class HttpDockerRegistryClient
      * @var PsrHttpRequestFactory
      */
     private $psrHttpRequestFactoryRegistry;
+
     /**
      * HttpDockerRegistryClient constructor.
      *
      * @param string                $username
      * @param string                $password
+     * @param string                $registryServiceName
      * @param HttpClient            $client
      * @param PsrHttpRequestFactory $psrHttpRequestFactoryRegistry
      * @param PsrHttpRequestFactory $psrHttpRequestFactoryAuthorization
-     *
      */
-    public function __construct($username, $password, HttpClient $client, PsrHttpRequestFactory $psrHttpRequestFactoryRegistry, PsrHttpRequestFactory $psrHttpRequestFactoryAuthorization)
+    public function __construct($username, $password, $registryServiceName, HttpClient $client, PsrHttpRequestFactory $psrHttpRequestFactoryRegistry, PsrHttpRequestFactory $psrHttpRequestFactoryAuthorization)
     {
         $this->username = $username;
         $this->password = $password;
+        $this->registryServiceName = $registryServiceName;
         $this->client = $client;
         $this->psrHttpRequestFactoryRegistry = $psrHttpRequestFactoryRegistry;
         $this->psrHttpRequestFactoryAuthorization = $psrHttpRequestFactoryAuthorization;
@@ -60,7 +66,7 @@ class HttpDockerRegistryClient
      */
     public function handle(Request $request)
     {
-        $authorizationRequest = $this->psrHttpRequestFactoryAuthorization->toPsrRequest(new Authorization($this->psrHttpRequestFactoryRegistry->host(), $this->username, $this->password, $request->scope()));
+        $authorizationRequest = $this->psrHttpRequestFactoryAuthorization->toPsrRequest(new Authorization($this->psrHttpRequestFactoryRegistry->host(), $this->registryServiceName, $this->username, $this->password, $request->scope()));
         $response = $this->client->sendRequest($authorizationRequest);
 
         if ($response->getStatusCode() !== 200) {

@@ -16,6 +16,7 @@ class AuthorizationSpec extends ObjectBehavior
 {
 
     private $registryHost;
+    private $registryService;
     private $username;
     private $password;
     private $scope;
@@ -23,11 +24,12 @@ class AuthorizationSpec extends ObjectBehavior
     function let()
     {
         $this->registryHost = 'https://registry.com';
+        $this->registryService = 'registry.com';
         $this->username = 'Franek';
         $this->password = 'Majehan';
         $this->scope    = 'registry:catalog:*';
 
-        $this->beConstructedWith($this->registryHost, $this->username, $this->password, $this->scope);
+        $this->beConstructedWith($this->registryHost, $this->registryService, $this->username, $this->password, $this->scope);
     }
 
     function it_is_initializable()

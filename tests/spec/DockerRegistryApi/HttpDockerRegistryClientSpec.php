@@ -28,6 +28,8 @@ class HttpDockerRegistryClientSpec extends ObjectBehavior
     /** @var  string */
     private $registryHost;
     /** @var  string */
+    private $registryServiceName;
+    /** @var  string */
     private $authorizationHost;
     /** @var  PsrHttpRequestFactory */
     private $registryFactory;
@@ -40,12 +42,13 @@ class HttpDockerRegistryClientSpec extends ObjectBehavior
         $password     = 'pass';
         $this->client = $client;
         $this->registryHost = 'localhost:812';
+        $this->registryServiceName = 'registry.com';
         $this->authorizationHost = 'auth.com';
         $this->registryFactory = $psrHttpRequestFactoryRegistry;
         $this->registryFactory->host()->willReturn('registry.com');
         $this->authorizationFactory = $httpRequestFactoryAuthorization;
 
-        $this->beConstructedWith($username, $password, $client, $this->registryFactory, $this->authorizationFactory);
+        $this->beConstructedWith($username, $password, $this->registryServiceName, $client, $this->registryFactory, $this->authorizationFactory);
     }
 
     function it_is_initializable()
