@@ -50,7 +50,7 @@ class Catalog implements Request
      */
     public function scope()
     {
-        return '/';
+        return 'registry:catalog:*';
     }
 
 
